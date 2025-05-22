@@ -1,9 +1,0 @@
-# Allow all web crawlers
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://www.medsprynt.com/sitemap.xml
-
-# Disallow specific directories if needed
-# Disallow: /admin/ 
