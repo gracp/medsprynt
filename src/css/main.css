@@ -1,4 +1,6 @@
 /* Main CSS for Med Sprynt website */
+@import "./simple.css";
+@import "./styles.css";
 
 /* Tailwind imports */
 @tailwind base;
