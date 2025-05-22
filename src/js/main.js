@@ -1,10 +1,3 @@
-// Import Alpine.js
-import Alpine from 'alpinejs';
-
-// Initialize Alpine.js
-window.Alpine = Alpine;
-Alpine.start();
-
 // Main JS file for Med Sprynt site
 
 // Wait for DOM content to be loaded
