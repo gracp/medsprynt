@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Med Tech AI Automation Blog | Med Sprynt</title>
+  <meta name="description" content="Expert articles, guides, and case studies about AI automation for Med Tech ecommerce businesses. Learn strategies for growth, compliance, and operational efficiency.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Med Tech AI Automation Blog | Med Sprynt">
+  <meta property="og:description" content="Expert articles, guides, and case studies about AI automation for Med Tech ecommerce businesses. Learn strategies for growth, compliance, and operational efficiency.">
+  <meta property="og:url" content="https://medsprynt.com/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://medsprynt.com/assets/images/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Med Tech AI Automation Blog | Med Sprynt">
+  <meta name="twitter:description" content="Expert articles, guides, and case studies about AI automation for Med Tech ecommerce businesses. Learn strategies for growth, compliance, and operational efficiency.">
+  <meta name="twitter:image" content="https://medsprynt.com/assets/images/og-image.jpg">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Med Sprynt",
+      "url": "https://medsprynt.com",
+      "logo": "https://medsprynt.com/assets/images/logo.svg",
+      "description": "Med Sprynt helps Med Tech founders streamline operations, enhance compliance, boost sales, and cut costs with AI-powered automations.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "",
+        "contactType": "customer service",
+        "email": "hello@medsprynt.com"
+      },
+      "sameAs": [
+        "https://twitter.com/medsprynt",
+        "https://linkedin.com/company/medsprynt"
+      ]
+    }
+  </script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link href="/css/main.css" rel="stylesheet">
+  
+  <!-- Alpine.js -->
+  <script defer src="/js/alpine.min.js"></script>
+  <script defer src="/js/main.js"></script>
+</head>
+<body class="min-h-screen flex flex-col font-sans text-gray-800 antialiased">
+  <!-- Header -->
+<header class="bg-white py-4 border-b border-gray-200 sticky top-0 z-50" aria-label="Site header" role="banner">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a href="/" class="text-xl font-bold text-cyan-600 bg-cyan-100 px-3 py-1 rounded">Med Sprynt</a>
+    
+    <nav 
+      class="hidden md:flex items-center space-x-6"
+      x-data="{ pathname: window.location.pathname }"
+      aria-label="Main navigation"
+      role="navigation"
+    >
+      <a href="/#solutions" class="text-gray-600 hover:text-gray-900" :class="pathname === '/' && window.location.hash === '#solutions' ? 'text-gray-900' : ''">Solutions</a>
+      <a href="/#process" class="text-gray-600 hover:text-gray-900" :class="pathname === '/' && window.location.hash === '#process' ? 'text-gray-900' : ''">Our Process</a>
+      <a href="/#challenges" class="text-gray-600 hover:text-gray-900" :class="pathname === '/' && window.location.hash === '#challenges' ? 'text-gray-900' : ''">Challenges Solved</a>
+      <a href="/blog" class="text-gray-600 hover:text-gray-900" :class="pathname.startsWith('/blog') ? 'text-gray-900' : ''">Insights Blog</a>
+      <a href="/#about" class="text-gray-600 hover:text-gray-900" :class="pathname === '/' && window.location.hash === '#about' ? 'text-gray-900' : ''">About Grapo</a>
+    </nav>
+    
+    <a href="/#contact"
+      class="hidden md:inline-flex items-center justify-center font-semibold rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out bg-cyan-500 text-white hover:bg-cyan-600 focus:ring-cyan-500 px-5 py-2.5 text-base">
+      Get Custom AI Plan
+    </a>
+    
+    <!-- Mobile Menu Button -->
+    <button 
+      class="md:hidden text-gray-600"
+      x-data="{ mobileMenuOpen: false }"
+      @click="mobileMenuOpen = !mobileMenuOpen"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+        stroke="currentColor" class="w-6 h-6" x-show="!mobileMenuOpen">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+        stroke="currentColor" class="w-6 h-6" x-show="mobileMenuOpen">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+      
+      <!-- Mobile Menu -->
+      <div 
+        x-show="mobileMenuOpen"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95"
+        class="absolute top-16 left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50 p-4"
+        @click.away="mobileMenuOpen = false"
+        aria-label="Mobile navigation menu"
+        role="menu"
+      >
+        <div class="flex flex-col space-y-4">
+          <a href="/#solutions" class="text-gray-600 hover:text-gray-900 py-2" @click="mobileMenuOpen = false">Solutions</a>
+          <a href="/#process" class="text-gray-600 hover:text-gray-900 py-2" @click="mobileMenuOpen = false">Our Process</a>
+          <a href="/#challenges" class="text-gray-600 hover:text-gray-900 py-2" @click="mobileMenuOpen = false">Challenges Solved</a>
+          <a href="/blog" class="text-gray-600 hover:text-gray-900 py-2" @click="mobileMenuOpen = false">Insights Blog</a>
+          <a href="/#about" class="text-gray-600 hover:text-gray-900 py-2" @click="mobileMenuOpen = false">About Grapo</a>
+          <a href="/#contact" class="inline-flex items-center justify-center font-semibold rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out bg-cyan-500 text-white hover:bg-cyan-600 focus:ring-cyan-500 px-5 py-2.5 text-base w-full text-center" @click="mobileMenuOpen = false">
+            Get Custom AI Plan
+          </a>
+        </div>
+      </div>
+    </button>
+  </div>
+</header>
+<!-- Sticky Mobile CTA -->
+<div class="fixed bottom-0 left-0 right-0 z-50 md:hidden flex justify-center pointer-events-none" aria-label="Sticky mobile call to action" role="complementary">
+  <a href="/#contact" class="pointer-events-auto m-4 px-6 py-3 bg-cyan-600 text-white font-bold rounded-full shadow-lg text-lg flex items-center justify-center gap-2 animate-bounce hover:bg-cyan-700 transition">
+    <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4 4 4-4m0-5V3"/></svg>
+    Book Free Strategy Call
+  </a>
+</div> 
+  
+  <main id="main-content" class="flex-grow" tabindex="-1" aria-label="Main content area">
+    
+<div class="container mx-auto px-4 py-16">
+  <div class="max-w-5xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">Med Tech AI Automation Blog</h1>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Expert insights, strategies, and case studies to help Med Tech founders leverage AI automation for growth, compliance, and operational efficiency.
+      </p>
+    </div>
+    
+    <!-- Blog Posts Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Blog Post 1: Compliance Automation -->
+      <a href="/blog/compliance-automation-fda-hipaa/" class="flex flex-col h-full group">
+        <div class="relative overflow-hidden rounded-t-lg mb-4">
+          <img src="/assets/images/blog/compliance-automation.jpg" alt="Med Tech Compliance Automation" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
+          <div class="absolute bottom-3 left-3">
+            <span class="bg-cyan-500 text-white text-xs px-2 py-1 rounded-full">Compliance</span>
+          </div>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Automating FDA and HIPAA Compliance for Med Tech Ecommerce</h3>
+        <p class="text-gray-600 text-sm mb-3 flex-grow">How AI is revolutionizing regulatory compliance for medical device companies, reducing costs and errors while improving audit readiness.</p>
+        <div class="flex items-center text-sm text-gray-500">
+          <span>August 12, 2023</span>
+          <span class="mx-2">•</span>
+          <span>7 min read</span>
+        </div>
+      </a>
+      
+      <!-- Blog Post 2: Inventory Automation -->
+      <a href="/blog/inventory-automation-medtech/" class="flex flex-col h-full group">
+        <div class="relative overflow-hidden rounded-t-lg mb-4">
+          <img src="/assets/images/blog/inventory-automation.jpg" alt="Med Tech Inventory Automation" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
+          <div class="absolute bottom-3 left-3">
+            <span class="bg-cyan-500 text-white text-xs px-2 py-1 rounded-full">Operations</span>
+          </div>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">AI-Driven Inventory Management for Med Tech Companies</h3>
+        <p class="text-gray-600 text-sm mb-3 flex-grow">Discover how predictive AI algorithms can reduce stockouts by 93% while cutting inventory costs by 22% or more.</p>
+        <div class="flex items-center text-sm text-gray-500">
+          <span>July 25, 2023</span>
+          <span class="mx-2">•</span>
+          <span>5 min read</span>
+        </div>
+      </a>
+      
+      <!-- Blog Post 3: Marketing Automation -->
+      <a href="/blog/medtech-marketing-automation/" class="flex flex-col h-full group">
+        <div class="relative overflow-hidden rounded-t-lg mb-4">
+          <img src="/assets/images/blog/marketing-automation.jpg" alt="Med Tech Marketing Automation" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
+          <div class="absolute bottom-3 left-3">
+            <span class="bg-cyan-500 text-white text-xs px-2 py-1 rounded-full">Marketing</span>
+          </div>
+        </div>
+        <h3 class="font-bold text-lg mb-2 group-hover:text-cyan-600 transition-colors">Personalization at Scale: AI Marketing for Med Tech Brands</h3>
+        <p class="text-gray-600 text-sm mb-3 flex-grow">How to implement AI-driven personalization to increase conversion rates by 40-60% while staying fully compliant.</p>
+        <div class="flex items-center text-sm text-gray-500">
+          <span>June 15, 2023</span>
+          <span class="mx-2">•</span>
+          <span>6 min read</span>
+        </div>
+      </a>
+    </div>
+    
+    <!-- Newsletter Signup -->
+    <div class="mt-16 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl p-8 border border-cyan-100 shadow-lg">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-2/3 mb-6 md:mb-0 md:pr-8">
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Get AI Automation Insights Delivered</h3>
+          <p class="text-gray-600 mb-4">
+            Join 2,500+ Med Tech leaders receiving our weekly insights on AI automation, compliance, and growth strategies.
+          </p>
+          <ul class="text-sm text-gray-600 mb-4">
+            <li class="flex items-start mb-2">
+              <svg class="flex-shrink-0 h-5 w-5 text-cyan-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="ml-2">Case studies with real results</span>
+            </li>
+            <li class="flex items-start mb-2">
+              <svg class="flex-shrink-0 h-5 w-5 text-cyan-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="ml-2">Actionable automation strategies</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="flex-shrink-0 h-5 w-5 text-cyan-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="ml-2">Industry-specific compliance updates</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="md:w-1/3">
+          <form 
+            x-data="{ email: '', name: '', submitted: false }" 
+            @submit.prevent="submitted = true; fetch('/netlify/functions/subscribe', { 
+              method: 'POST', 
+              headers: { 'Content-Type': 'application/json' }, 
+              body: JSON.stringify({ email, name })
+            })"
+            class="space-y-3"
+          >
+            <div>
+              <label for="newsletter-email" class="sr-only">Email address</label>
+              <input 
+                type="email" 
+                id="newsletter-email" 
+                x-model="email"
+                placeholder="Your work email" 
+                required 
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-600 focus:border-cyan-600 focus:outline-none"
+              >
+            </div>
+            <div>
+              <label for="newsletter-name" class="sr-only">Your name</label>
+              <input 
+                type="text" 
+                id="newsletter-name" 
+                x-model="name"
+                placeholder="Your name" 
+                required 
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-600 focus:border-cyan-600 focus:outline-none"
+              >
+            </div>
+            <div>
+              <button 
+                type="submit" 
+                x-show="!submitted"
+                class="w-full py-3 bg-cyan-600 text-white font-semibold rounded-md hover:bg-cyan-700 transition-colors duration-300"
+              >
+                Subscribe Now
+              </button>
+              <div 
+                x-show="submitted"
+                class="w-full py-3 bg-green-500 text-white font-semibold rounded-md text-center"
+              >
+                Thank You!
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 text-center">No spam, unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+  </main>
+  
+  <!-- Footer -->
+<footer class="bg-gray-800 text-gray-300 pt-16 pb-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <!-- Footer Column 1: Brand/About -->
+      <div class="md:col-span-1">
+        <a href="/" class="text-xl font-bold text-white bg-cyan-600 px-3 py-1 rounded inline-block mb-4">Med Sprynt</a>
+        <p class="text-gray-400 text-sm mb-4">AI Automation experts specializing in scaling Med Tech Ecommerce brands. Founded by Gracjan 'Grapo' Poniatowski.</p>
+        <div class="flex space-x-3">
+          <a href="#" class="text-gray-400 hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Footer Column 2: Solutions -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">AI Solutions</h4>
+        <ul class="space-y-2">
+          <li><a href="/#solutions" class="text-gray-400 hover:text-white text-sm">Custom Workflow Automation</a></li>
+          <li><a href="/#solutions" class="text-gray-400 hover:text-white text-sm">AI-Powered Support</a></li>
+          <li><a href="/#solutions" class="text-gray-400 hover:text-white text-sm">Ecommerce Growth AI</a></li>
+          <li><a href="/#compliance" class="text-gray-400 hover:text-white text-sm">Compliance Automation</a></li>
+          <li><a href="/#process" class="text-gray-400 hover:text-white text-sm">Our Process</a></li>
+        </ul>
+      </div>
+      
+      <!-- Footer Column 3: Resources -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="/blog" class="text-gray-400 hover:text-white text-sm">Insights Blog</a></li>
+          <li><a href="/blog/compliance-automation-fda-hipaa" class="text-gray-400 hover:text-white text-sm">FDA & HIPAA Compliance</a></li>
+          <li><a href="/blog/inventory-automation-medtech" class="text-gray-400 hover:text-white text-sm">Inventory Automation</a></li>
+          <li><a href="/#about" class="text-gray-400 hover:text-white text-sm">About Grapo</a></li>
+        </ul>
+      </div>
+      
+      <!-- Footer Column 4: Contact/Legal -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">Connect</h4>
+        <ul class="space-y-2">
+          <li><a href="/#contact" class="text-gray-400 hover:text-white text-sm">Contact Us</a></li>
+          <li><a href="/#contact" class="text-gray-400 hover:text-white text-sm">Book Strategy Call</a></li>
+          <li><a href="/privacy-policy" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a></li>
+          <li><a href="/terms" class="text-gray-400 hover:text-white text-sm">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-500 flex flex-col items-center gap-2">
+      <span>&copy; <span id="current-year">May 22, 2025</span> Gracjan Poniatowski. Med Sprynt. All rights reserved.</span>
+      <div class="flex gap-4 justify-center mt-2">
+        <img src="/assets/images/testimonial-logos/trustpilot.svg" alt="Trustpilot" class="h-6" loading="lazy" onerror="this.src='https://via.placeholder.com/80x24?text=Trustpilot'; this.onerror='';" />
+        <img src="/assets/images/testimonial-logos/capterra.svg" alt="Capterra" class="h-6" loading="lazy" onerror="this.src='https://via.placeholder.com/80x24?text=Capterra'; this.onerror='';" />
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script> 
+  
+  <!-- Simple Analytics -->
+  <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+</body>
+</html> 

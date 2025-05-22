@@ -1,0 +1,262 @@
+/* Main CSS for Med Sprynt website */
+
+/* Tailwind imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply text-gray-800 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gray-900 font-bold;
+  }
+  
+  a {
+    @apply transition-colors duration-300;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+  
+  /* Blog content styling */
+  .prose h1 {
+    @apply text-3xl mb-6 font-bold;
+  }
+  
+  .prose h2 {
+    @apply text-2xl mt-10 mb-4 font-bold border-b border-gray-200 pb-2;
+  }
+  
+  .prose h3 {
+    @apply text-xl mt-8 mb-3 font-bold;
+  }
+  
+  .prose ul {
+    @apply list-disc ml-6 mb-6;
+  }
+  
+  .prose ol {
+    @apply list-decimal ml-6 mb-6;
+  }
+  
+  .prose p {
+    @apply mb-5;
+  }
+  
+  .prose img {
+    @apply rounded-lg my-8 shadow-md;
+  }
+  
+  .prose a {
+    @apply text-cyan-600 hover:text-cyan-800 underline;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-cyan-300 pl-4 italic my-6 text-gray-600;
+  }
+  
+  .prose code {
+    @apply bg-gray-100 rounded px-1 py-0.5 text-sm;
+  }
+  
+  .prose pre {
+    @apply bg-gray-800 text-gray-100 p-4 rounded-lg my-6 overflow-x-auto;
+  }
+}
+
+/* Custom component classes */
+@layer components {
+  /* Button styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold transition-all duration-300 transform focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-cyan-600 text-white hover:bg-cyan-700 focus:ring-cyan-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-cyan-600 border border-cyan-300 hover:bg-cyan-50 focus:ring-cyan-400;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-300;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden border border-gray-200;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  /* Form styles */
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-cyan-600 focus:border-cyan-600 focus:outline-none;
+  }
+  
+  .form-label {
+    @apply block text-gray-700 font-medium mb-2;
+  }
+  
+  .form-error {
+    @apply text-red-600 text-sm mt-1;
+  }
+  
+  /* Badge styles */
+  .badge {
+    @apply inline-block px-3 py-1 text-xs font-semibold rounded-full;
+  }
+  
+  .badge-primary {
+    @apply bg-cyan-100 text-cyan-800;
+  }
+  
+  .badge-secondary {
+    @apply bg-gray-100 text-gray-800;
+  }
+  
+  /* Section styles */
+  .section-heading {
+    @apply text-3xl font-bold mb-4;
+  }
+  
+  .section-subheading {
+    @apply text-lg text-gray-600 mb-8 max-w-3xl mx-auto;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  /* Animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .delay-200 {
+    transition-delay: 200ms;
+  }
+  
+  .delay-400 {
+    transition-delay: 400ms;
+  }
+  
+  .delay-600 {
+    transition-delay: 600ms;
+  }
+  
+  /* Text effects */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 to-blue-600;
+  }
+  
+  /* Background patterns and overlays */
+  .bg-pattern-grid {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  .bg-overlay-gradient {
+    @apply bg-gradient-to-b from-black/50 to-transparent;
+  }
+}
+
+/* Custom styles not fitting into layers */
+/* Mobile menu transition */
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.mobile-menu-enter-from,
+.mobile-menu-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+/* Testimonial carousel */
+.testimonial-slide {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial-slide:not(.active) {
+  opacity: 0;
+  transform: translateX(20px);
+  position: absolute;
+  pointer-events: none;
+}
+
+/* FAQ accordion */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-content.open {
+  max-height: 1000px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 6px;
+  border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+  }
+  
+  a {
+    text-decoration: none !important;
+    color: #000 !important;
+  }
+  
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .prose img {
+    max-width: 600px;
+    margin: 2em auto;
+  }
+} 

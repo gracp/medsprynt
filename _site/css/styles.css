@@ -1,0 +1,150 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Custom styles beyond Tailwind */
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.star {
+  color: #fbbf24; /* text-yellow-400 */
+}
+
+.star-empty {
+  color: #d1d5db; /* text-gray-300 */
+}
+
+/* Icon placeholders */
+.icon-placeholder {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #cffafe; /* light cyan */
+  border-radius: 50%;
+  margin-right: 1rem;
+  vertical-align: middle;
+  line-height: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: #0891b2; /* darker cyan */
+}
+
+.process-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #cffafe; /* light cyan */
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #0e7490; /* darker cyan */
+}
+
+/* Hormozi-style elements */
+.pricing-box {
+  @apply bg-white rounded-lg border-2 border-cyan-500 shadow-xl transform transition-transform duration-300;
+}
+
+.pricing-box:hover {
+  @apply -translate-y-2 shadow-2xl border-cyan-600;
+}
+
+.testimonial-card {
+  @apply bg-white rounded-lg p-6 shadow-lg border-l-4 border-cyan-500;
+}
+
+.cta-button {
+  @apply inline-flex items-center justify-center font-bold rounded-full px-6 py-4 text-lg bg-cyan-600 text-white hover:bg-cyan-700 transition duration-300 transform hover:-translate-y-1 hover:shadow-lg;
+}
+
+/* Nate Herk style elements */
+.benefit-box {
+  @apply flex items-start p-4 rounded-lg bg-cyan-50 mb-4;
+}
+
+.benefit-icon {
+  @apply flex-shrink-0 w-10 h-10 bg-cyan-500 text-white rounded-full flex items-center justify-center mr-4;
+}
+
+.benefit-content {
+  @apply flex-grow;
+}
+
+/* Julian Goldie style elements */
+.content-box {
+  @apply bg-white rounded-lg p-8 border border-gray-200 shadow-md;
+}
+
+.highlight-text {
+  @apply bg-yellow-100 text-yellow-800 px-2 py-1 rounded font-medium;
+}
+
+/* Matthew Larsen style accordion */
+.accordion-item {
+  @apply border-b border-gray-200 py-4;
+}
+
+.accordion-button {
+  @apply flex justify-between items-center w-full text-left font-semibold;
+}
+
+.accordion-content {
+  @apply mt-2 text-gray-600;
+}
+
+/* Base styles */
+:root {
+  --color-primary: #0891b2; /* cyan-600 */
+  --color-primary-hover: #0e7490; /* cyan-700 */
+  --color-secondary: #4338ca; /* indigo-700 */
+  --color-light: #ecfeff; /* cyan-50 */
+  --color-dark: #0f172a; /* slate-900 */
+}
+
+/* Typography tweaks */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+/* Custom form styles */
+input:focus, textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Custom button states */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Add animation for form success */
+.form-success {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Additional responsive helpers */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+} 

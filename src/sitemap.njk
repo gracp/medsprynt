@@ -1,0 +1,47 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>{{ site.url }}/</loc>
+    <lastmod>{{ site.buildTime | dateToFormat('yyyy-MM-dd') }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Blog Index -->
+  <url>
+    <loc>{{ site.url }}/blog/</loc>
+    <lastmod>{{ site.buildTime | dateToFormat('yyyy-MM-dd') }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  {%- for post in collections.posts %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | dateToFormat('yyyy-MM-dd') }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  {%- endfor %}
+  
+  <!-- Policy Pages -->
+  <url>
+    <loc>{{ site.url }}/privacy-policy/</loc>
+    <lastmod>{{ site.buildTime | dateToFormat('yyyy-MM-dd') }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>{{ site.url }}/terms-of-service/</loc>
+    <lastmod>{{ site.buildTime | dateToFormat('yyyy-MM-dd') }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset> 

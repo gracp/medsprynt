@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+title: Page Not Found | Med Sprynt
+description: The page you're looking for doesn't exist or has been moved.
+permalink: 404.html
+eleventyExcludeFromCollections: true
+---
+
+<div class="py-16 md:py-24">
+  <div class="container mx-auto px-4">
+    <div class="max-w-lg mx-auto text-center">
+      <div class="mb-8">
+        <div class="inline-block text-cyan-600 bg-cyan-100 p-3 rounded-full mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        
+        <h1 class="text-4xl font-bold mb-4">Oops! Page Not Found</h1>
+        <p class="text-lg text-gray-600 mb-8">The page you're looking for doesn't exist or may have been moved. Let's get you back on track.</p>
+      </div>
+      
+      <div class="mb-12">
+        <a href="/" class="btn btn-primary mb-4 w-full">Return to Home</a>
+        
+        <div class="mt-4 text-center">
+          <p class="text-gray-600 mb-4">Or navigate to one of these popular sections:</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <a href="/#solutions" class="badge badge-primary">Solutions</a>
+            <a href="/#process" class="badge badge-primary">Our Process</a>
+            <a href="/blog" class="badge badge-primary">Blog</a>
+            <a href="/#contact" class="badge badge-primary">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-200 pt-8">
+        <h2 class="text-lg font-semibold mb-4">Looking for compliance or automation information?</h2>
+        <p class="text-gray-600 mb-6">Check out our latest articles on these topics:</p>
+        
+        <div class="grid gap-4">
+          <a href="/blog/compliance-automation-fda-hipaa" class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 text-left">
+            <h3 class="font-bold">Automating FDA & HIPAA Compliance</h3>
+            <p class="text-sm text-gray-600">How AI can automate 70% of your compliance workload while improving accuracy.</p>
+          </a>
+          
+          <a href="/blog/inventory-automation-medtech" class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 text-left">
+            <h3 class="font-bold">Inventory Automation for Med Tech</h3>
+            <p class="text-sm text-gray-600">Reduce stockouts by 93% while cutting inventory costs by 22% with AI.</p>
+          </a>
+        </div>
+      </div>
+      
+      <div class="mt-12">
+        <p class="text-sm text-gray-500">
+          If you believe this is an error, please contact us at 
+          <a href="mailto:support@medsprynt.com" class="text-cyan-600 hover:underline">support@medsprynt.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div> 

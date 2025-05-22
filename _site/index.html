@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Med Sprynt | AI Automation for Med Tech Ecommerce Growth</title>
+  <meta name="description" content="Med Sprynt helps Med Tech founders streamline operations, enhance compliance, boost sales, and cut costs with AI-powered automations.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Med Sprynt | AI Automation for Med Tech Ecommerce Growth">
+  <meta property="og:description" content="Med Sprynt helps Med Tech founders streamline operations, enhance compliance, boost sales, and cut costs with AI-powered automations.">
+  <meta property="og:url" content="https://medsprynt.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://medsprynt.com/assets/images/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Med Sprynt | AI Automation for Med Tech Ecommerce Growth">
+  <meta name="twitter:description" content="Med Sprynt helps Med Tech founders streamline operations, enhance compliance, boost sales, and cut costs with AI-powered automations.">
+  <meta name="twitter:image" content="https://medsprynt.com/assets/images/og-image.jpg">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Med Sprynt",
+      "url": "https://medsprynt.com",
+      "logo": "https://medsprynt.com/assets/images/logo.svg",
+      "description": "Med Sprynt helps Med Tech founders streamline operations, enhance compliance, boost sales, and cut costs with AI-powered automations.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "",
+        "contactType": "customer service",
+        "email": "hello@medsprynt.com"
+      },
+      "sameAs": [
+        "https://twitter.com/medsprynt",
+        "https://linkedin.com/company/medsprynt"
+      ]
+    }
+  </script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link href="/css/main.css" rel="stylesheet">
+  
+  <!-- Alpine.js -->
+  <script defer src="/js/alpine.min.js"></script>
+  <script defer src="/js/main.js"></script>
+</head>
+<body class="min-h-screen flex flex-col font-sans text-gray-800 antialiased">
+  <!-- Header -->
+<header class="bg-white py-4 border-b border-gray-200 sticky top-0 z-50" aria-label="Site header" role="banner">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a href="/" class="text-xl font-bold text-cyan-600 bg-cyan-100 px-3 py-1 rounded">Med Sprynt</a>
+    
+    <nav 
+      class="hidden md:flex items-center space-x-6"
+      x-data="{ pathname: window.location.pathname }"
+      aria-label="Main navigation"
+      role="navigation"
+    >
+      <a href="/#solutions" class="text-gray-600 hover:text-gray-900" :class="pathname === '/' && window.location.hash === '#solutions' ? 'text-gray-900' : ''">Solutions</a>
+      <a href="/#process" class="text-gray-600 hover:text-gray-900" :class="pathname === '/' && window.location.hash === '#process' ? 'text-gray-900' : ''">Our Process</a>
+      <a href="/#challenges" class="text-gray-600 hover:text-gray-900" :class="pathname === '/' && window.location.hash === '#challenges' ? 'text-gray-900' : ''">Challenges Solved</a>
+      <a href="/blog" class="text-gray-600 hover:text-gray-900" :class="pathname.startsWith('/blog') ? 'text-gray-900' : ''">Insights Blog</a>
+      <a href="/#about" class="text-gray-600 hover:text-gray-900" :class="pathname === '/' && window.location.hash === '#about' ? 'text-gray-900' : ''">About Grapo</a>
+    </nav>
+    
+    <a href="/#contact"
+      class="hidden md:inline-flex items-center justify-center font-semibold rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out bg-cyan-500 text-white hover:bg-cyan-600 focus:ring-cyan-500 px-5 py-2.5 text-base">
+      Get Custom AI Plan
+    </a>
+    
+    <!-- Mobile Menu Button -->
+    <button 
+      class="md:hidden text-gray-600"
+      x-data="{ mobileMenuOpen: false }"
+      @click="mobileMenuOpen = !mobileMenuOpen"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+        stroke="currentColor" class="w-6 h-6" x-show="!mobileMenuOpen">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+        stroke="currentColor" class="w-6 h-6" x-show="mobileMenuOpen">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+      
+      <!-- Mobile Menu -->
+      <div 
+        x-show="mobileMenuOpen"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95"
+        class="absolute top-16 left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50 p-4"
+        @click.away="mobileMenuOpen = false"
+        aria-label="Mobile navigation menu"
+        role="menu"
+      >
+        <div class="flex flex-col space-y-4">
+          <a href="/#solutions" class="text-gray-600 hover:text-gray-900 py-2" @click="mobileMenuOpen = false">Solutions</a>
+          <a href="/#process" class="text-gray-600 hover:text-gray-900 py-2" @click="mobileMenuOpen = false">Our Process</a>
+          <a href="/#challenges" class="text-gray-600 hover:text-gray-900 py-2" @click="mobileMenuOpen = false">Challenges Solved</a>
+          <a href="/blog" class="text-gray-600 hover:text-gray-900 py-2" @click="mobileMenuOpen = false">Insights Blog</a>
+          <a href="/#about" class="text-gray-600 hover:text-gray-900 py-2" @click="mobileMenuOpen = false">About Grapo</a>
+          <a href="/#contact" class="inline-flex items-center justify-center font-semibold rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out bg-cyan-500 text-white hover:bg-cyan-600 focus:ring-cyan-500 px-5 py-2.5 text-base w-full text-center" @click="mobileMenuOpen = false">
+            Get Custom AI Plan
+          </a>
+        </div>
+      </div>
+    </button>
+  </div>
+</header>
+<!-- Sticky Mobile CTA -->
+<div class="fixed bottom-0 left-0 right-0 z-50 md:hidden flex justify-center pointer-events-none" aria-label="Sticky mobile call to action" role="complementary">
+  <a href="/#contact" class="pointer-events-auto m-4 px-6 py-3 bg-cyan-600 text-white font-bold rounded-full shadow-lg text-lg flex items-center justify-center gap-2 animate-bounce hover:bg-cyan-700 transition">
+    <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4 4 4-4m0-5V3"/></svg>
+    Book Free Strategy Call
+  </a>
+</div> 
+  
+  <main id="main-content" class="flex-grow" tabindex="-1" aria-label="Main content area">
+    
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section class="py-20 md:py-32 text-center bg-white">
+  <div class="container mx-auto px-6">
+    <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+      Scale Your Med Tech Ecommerce Brand with <span class="text-cyan-600 relative inline-block">
+        Intelligent AI Automation
+        <span class="absolute left-0 bottom-0 w-full h-1 bg-cyan-200"></span>
+      </span>
+    </h1>
+    
+    <!-- Hormozi-style subheadline with specific pain points -->
+    <p class="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto mb-12">
+      Stop drowning in manual tasks, compliance headaches, and missed sales opportunities. 
+      I'm <span class="font-semibold">Grapo (Gracjan Poniatowski)</span> 👋 — I help Med Tech founders like you 
+      <span class="bg-yellow-100 px-1 rounded">automate the boring stuff</span> so you can focus on what matters: 
+      <span class="font-semibold text-cyan-700">growing your brand and helping more patients</span>.
+    </p>
+    
+    <!-- Value-driven benefits (Nate Herk style) -->
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-cyan-50 border border-cyan-100 rounded-xl p-6">
+        <div class="text-cyan-600 font-bold text-2xl mb-2">✓</div>
+        <div>
+          <p class="font-semibold text-gray-800">Grow revenue 20-40%</p>
+        </div>
+      </div>
+      <div class="bg-cyan-50 border border-cyan-100 rounded-xl p-6">
+        <div class="text-cyan-600 font-bold text-2xl mb-2">✓</div>
+        <div>
+          <p class="font-semibold text-gray-800">Cut operating costs by 30%</p>
+        </div>
+      </div>
+      <div class="bg-cyan-50 border border-cyan-100 rounded-xl p-6">
+        <div class="text-cyan-600 font-bold text-2xl mb-2">✓</div>
+        <div>
+          <p class="font-semibold text-gray-800">Stay 100% compliant</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Email capture form with Netlify integration -->
+    <div class="max-w-xl mx-auto">
+      <form 
+        name="ai-growth-plan" 
+        method="POST" 
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="bg-white rounded-xl border border-gray-200 p-8 shadow-lg"
+        x-data="{ submitted: false }"
+        x-show="!submitted"
+        @submit.prevent="
+          fetch('/', { 
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData($event.target)).toString()
+          })
+          .then(() => { submitted = true; })
+          .catch(error => console.error('Error:', error))
+        "
+      >
+        <input type="hidden" name="form-name" value="ai-growth-plan" />
+        <p class="hidden">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+        
+        <p class="text-sm font-medium text-gray-500 mb-3">REQUEST YOUR CUSTOM</p>
+        <h3 class="text-xl font-bold text-gray-800 mb-4">FREE AI AUTOMATION GROWTH PLAN</h3>
+        
+        <div class="mb-4">
+          <label for="email" class="sr-only">Email</label>
+          <input 
+            type="email" 
+            id="email"
+            name="email"
+            placeholder="Your business email address" 
+            required
+            class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          />
+        </div>
+        
+        <button 
+          type="submit" 
+          class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-4 px-6 rounded-xl transition duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center justify-center gap-2 animate-pulse"
+        >
+          <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 17l4 4 4-4m0-5V3"/></svg>
+          Get My Free AI Growth Plan <span class="ml-1 text-xs font-semibold bg-yellow-200 text-yellow-900 px-2 py-0.5 rounded">100% Free</span>
+        </button>
+        
+        <p class="mt-4 text-sm text-gray-500 text-center">
+          We respect your privacy. No spam, ever. Unsubscribe anytime.
+        </p>
+      </form>
+      
+      <!-- Post-submission message -->
+      <div 
+        x-data="{ submitted: false }"
+        x-show="submitted" 
+        x-transition
+        class="bg-green-50 border border-green-200 rounded-xl p-8 text-center"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">You're All Set!</h3>
+        <p class="text-gray-600">
+          Check your email inbox in the next 24 hours for your custom AI Growth Plan. 
+          Make sure to check your spam folder if you don't see it.
+        </p>
+      </div>
+      <!-- Risk-Free Guarantee Badge -->
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <span class="inline-flex items-center px-4 py-1.5 bg-green-100 text-green-800 text-sm font-bold rounded-full border border-green-300 shadow-sm">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          Risk-Free Guarantee
+        </span>
+        <span class="text-xs text-gray-600">If you don't see at least 20% more efficiency, you pay nothing.</span>
+      </div>
+    </div>
+    
+    <!-- Social proof -->
+    <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mt-16 text-gray-600">
+      <div class="flex -space-x-2">
+        
+          <img 
+            src="/assets/images/testimonial-logos/client1.svg" 
+            alt="Med Tech Client" 
+            class="w-8 h-8 rounded-full border-2 border-white object-cover"
+            loading="lazy"
+            onerror="this.src='https://via.placeholder.com/32/9CA3AF/FFFFFF?text=MT'; this.onerror='';"
+          />
+        
+          <img 
+            src="/assets/images/testimonial-logos/client1.svg" 
+            alt="Med Tech Client" 
+            class="w-8 h-8 rounded-full border-2 border-white object-cover"
+            loading="lazy"
+            onerror="this.src='https://via.placeholder.com/32/9CA3AF/FFFFFF?text=MT'; this.onerror='';"
+          />
+        
+          <img 
+            src="/assets/images/testimonial-logos/client1.svg" 
+            alt="Med Tech Client" 
+            class="w-8 h-8 rounded-full border-2 border-white object-cover"
+            loading="lazy"
+            onerror="this.src='https://via.placeholder.com/32/9CA3AF/FFFFFF?text=MT'; this.onerror='';"
+          />
+        
+          <img 
+            src="/assets/images/testimonial-logos/client1.svg" 
+            alt="Med Tech Client" 
+            class="w-8 h-8 rounded-full border-2 border-white object-cover"
+            loading="lazy"
+            onerror="this.src='https://via.placeholder.com/32/9CA3AF/FFFFFF?text=MT'; this.onerror='';"
+          />
+        
+      </div>
+      <div class="flex items-center text-yellow-400">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        <span class="ml-1 font-medium text-gray-800">5.0</span>
+      </div>
+      <span class="text-sm md:text-base">Trusted by leading Med Tech brands</span>
+    </div>
+    
+    <!-- Custom SVG Diagram: How Med Sprynt Works -->
+    <div class="mt-16 max-w-3xl mx-auto text-center">
+      <h3 class="text-xl font-bold mb-4 text-gray-900">How Med Sprynt Works</h3>
+      <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+        <div class="flex flex-col items-center">
+          <svg width="64" height="64" fill="none" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#ECFEFF" stroke="#06B6D4" stroke-width="3"/><path d="M32 20v16l10 6" stroke="#06B6D4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="mt-2 font-semibold text-cyan-700">1. Free AI Audit</span>
+          <span class="text-xs text-gray-500">We analyze your workflows & compliance needs</span>
+        </div>
+        <svg class="hidden md:block" width="32" height="32" fill="none" viewBox="0 0 32 32"><path d="M4 16h24" stroke="#A7F3D0" stroke-width="3" stroke-linecap="round"/><path d="M20 10l8 6-8 6" stroke="#06B6D4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="flex flex-col items-center">
+          <svg width="64" height="64" fill="none" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#F0FDFA" stroke="#14B8A6" stroke-width="3"/><path d="M24 32l8 8 8-8" stroke="#14B8A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="mt-2 font-semibold text-teal-700">2. Custom AI Automation</span>
+          <span class="text-xs text-gray-500">We build & integrate your automation solution</span>
+        </div>
+        <svg class="hidden md:block" width="32" height="32" fill="none" viewBox="0 0 32 32"><path d="M4 16h24" stroke="#A7F3D0" stroke-width="3" stroke-linecap="round"/><path d="M20 10l8 6-8 6" stroke="#14B8A6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="flex flex-col items-center">
+          <svg width="64" height="64" fill="none" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="#F0FDF4" stroke="#22C55E" stroke-width="3"/><path d="M24 40l8-8 8 8" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="mt-2 font-semibold text-green-700">3. Measurable Results</span>
+          <span class="text-xs text-gray-500">See efficiency, compliance, and sales grow</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<!-- Benefits/Features Section -->
+<section id="benefits" class="py-24 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">AI Automation Solutions for Med Tech Growth</h2>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">Custom automation solutions designed specifically for the unique challenges of Med Tech ecommerce businesses.</p>
+    </div>
+    
+    <!-- Key Service Offerings -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <!-- Compliance Automation -->
+      <div class="bg-white rounded-xl shadow-lg p-10 transform transition-transform hover:-translate-y-1 hover:shadow-xl">
+        <div class="text-cyan-600 mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">FDA & HIPAA Compliance</h3>
+        <p class="text-gray-700 mb-4">Automate regulatory documentation, validation processes, and compliance reporting to reduce risk and save 20+ hours per month.</p>
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Automated audit trails</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Documentation verification</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Compliance dashboard</span>
+          </li>
+        </ul>
+        <div class="mt-6">
+          <span class="inline-block bg-cyan-50 text-cyan-800 text-sm px-3 py-1 rounded-full font-medium">95% Less Manual Work</span>
+        </div>
+      </div>
+      
+      <!-- Inventory Management -->
+      <div class="bg-white rounded-xl shadow-lg p-10 transform transition-transform hover:-translate-y-1 hover:shadow-xl">
+        <div class="text-cyan-600 mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Inventory Automation</h3>
+        <p class="text-gray-700 mb-4">Smart inventory forecasting, lot tracking, and expiration management that eliminates stockouts and reduces waste by 40%.</p>
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Predictive reordering</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Batch & lot traceability</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Expiration alerts</span>
+          </li>
+        </ul>
+        <div class="mt-6">
+          <span class="inline-block bg-cyan-50 text-cyan-800 text-sm px-3 py-1 rounded-full font-medium">99.8% Inventory Accuracy</span>
+        </div>
+      </div>
+      
+      <!-- Marketing Automation -->
+      <div class="bg-white rounded-xl shadow-lg p-10 transform transition-transform hover:-translate-y-1 hover:shadow-xl">
+        <div class="text-cyan-600 mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Marketing Automation</h3>
+        <p class="text-gray-700 mb-4">HIPAA-compliant email flows, compliant ad targeting, and conversion optimization tailored for Med Tech products.</p>
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Compliant email sequences</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Automated review collection</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-cyan-600 mr-2">✓</span>
+            <span>Healthcare-specific targeting</span>
+          </li>
+        </ul>
+        <div class="mt-6">
+          <span class="inline-block bg-cyan-50 text-cyan-800 text-sm px-3 py-1 rounded-full font-medium">32% More Conversions</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Secondary Features -->
+    <div class="mt-20 max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold text-center text-gray-900 mb-10">Additional Automation Capabilities</h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <!-- Customer Service -->
+        <div class="flex items-start p-4">
+          <div class="bg-cyan-100 p-2 rounded-lg text-cyan-700 mr-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-1">Customer Service Automation</h4>
+            <p class="text-gray-700">Intelligent ticketing, automatic categorization and pre-written responses for common Med Tech inquiries.</p>
+          </div>
+        </div>
+        
+        <!-- Reporting -->
+        <div class="flex items-start p-4">
+          <div class="bg-cyan-100 p-2 rounded-lg text-cyan-700 mr-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-1">Sales & Analytics Reporting</h4>
+            <p class="text-gray-700">Automated dashboards and reports to monitor key metrics, compliance KPIs, and business performance.</p>
+          </div>
+        </div>
+        
+        <!-- Order Processing -->
+        <div class="flex items-start p-4">
+          <div class="bg-cyan-100 p-2 rounded-lg text-cyan-700 mr-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-1">Order Processing</h4>
+            <p class="text-gray-700">Automated order routing, validation, and fulfillment workflows with special handling for regulated products.</p>
+          </div>
+        </div>
+        
+        <!-- Integration -->
+        <div class="flex items-start p-4">
+          <div class="bg-cyan-100 p-2 rounded-lg text-cyan-700 mr-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-1">Multi-System Integration</h4>
+            <p class="text-gray-700">Custom API connections between your ERP, CRM, ecommerce platform, and compliance systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CTA -->
+    <div class="mt-20 text-center">
+      <a href="#contact" class="inline-block px-10 py-4 bg-cyan-600 text-white font-semibold rounded-xl hover:bg-cyan-700 transition-colors">
+        Explore Automation Solutions
+      </a>
+    </div>
+  </div>
+</section> 
+
+<!-- Testimonials Section -->
+<!-- Testimonials Section -->
+<section class="py-20 bg-gray-100">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-3">SUCCESS STORIES</span>
+      <h2 class="text-3xl font-bold mb-4">Real Results from Med Tech Leaders</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">See how other Med Tech and ecommerce companies have transformed their operations and growth with Med Sprynt's custom AI automations.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+      <!-- Testimonial 1 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+        <div class="p-8">
+          <div class="flex items-center mb-6">
+            <img 
+              src="/assets/images/testimonial-logos/client1.svg" 
+              alt="MedDevices Direct" 
+              class="w-12 h-12 rounded-full mr-4 object-cover border border-gray-200"
+              loading="lazy"
+              onerror="this.src='https://via.placeholder.com/48/9CA3AF/FFFFFF?text=MD'; this.onerror='';"
+            />
+            <div>
+              <h3 class="font-bold text-gray-800">Sarah Chen</h3>
+              <p class="text-sm text-gray-600">COO, MedDevices Direct</p>
+            </div>
+          </div>
+          
+          <p class="text-gray-600 italic mb-6">
+            "Med Sprynt's AI automations cut our inventory management time by 82% and improved our FDA compliance documentation process. The ROI was clear within the first month."
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 mb-4">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="font-bold text-xl text-cyan-600">82%</p>
+              <p class="text-xs text-gray-500">Reduction in inventory management time</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="font-bold text-xl text-cyan-600">43%</p>
+              <p class="text-xs text-gray-500">Increase in order fulfillment speed</p>
+            </div>
+          </div>
+          
+          <div class="text-xs text-gray-500">Medical devices supplier, 32 employees</div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+        <div class="p-8">
+          <div class="flex items-center mb-6">
+            <img 
+              src="/assets/images/testimonial-logos/client2.svg" 
+              alt="HealthTech Innovations" 
+              class="w-12 h-12 rounded-full mr-4 object-cover border border-gray-200"
+              loading="lazy"
+              onerror="this.src='https://via.placeholder.com/48/9CA3AF/FFFFFF?text=HT'; this.onerror='';"
+            />
+            <div>
+              <h3 class="font-bold text-gray-800">Michael Rodriguez</h3>
+              <p class="text-sm text-gray-600">Founder, HealthTech Innovations</p>
+            </div>
+          </div>
+          
+          <p class="text-gray-600 italic mb-6">
+            "Within 90 days of implementing Med Sprynt's AI support automation, our customer satisfaction scores increased by 27% while cutting support costs by 41%. Their team's understanding of HIPAA requirements was crucial."
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 mb-4">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="font-bold text-xl text-cyan-600">27%</p>
+              <p class="text-xs text-gray-500">Improvement in customer satisfaction</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="font-bold text-xl text-cyan-600">41%</p>
+              <p class="text-xs text-gray-500">Reduction in support costs</p>
+            </div>
+          </div>
+          
+          <div class="text-xs text-gray-500">Medical software company, 18 employees</div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+        <div class="p-8">
+          <div class="flex items-center mb-6">
+            <img 
+              src="/assets/images/testimonial-logos/client3.svg" 
+              alt="MediCare Plus" 
+              class="w-12 h-12 rounded-full mr-4 object-cover border border-gray-200"
+              loading="lazy"
+              onerror="this.src='https://via.placeholder.com/48/9CA3AF/FFFFFF?text=MC'; this.onerror='';"
+            />
+            <div>
+              <h3 class="font-bold text-gray-800">Jennifer Li</h3>
+              <p class="text-sm text-gray-600">Marketing Director, MediCare Plus</p>
+            </div>
+          </div>
+          
+          <p class="text-gray-600 italic mb-6">
+            "Our ecommerce conversion rate increased from 2.3% to 5.8% after implementing Med Sprynt's AI-driven marketing automation. Their system created compliant yet highly effective email campaigns that drove real results."
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 mb-4">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="font-bold text-xl text-cyan-600">152%</p>
+              <p class="text-xs text-gray-500">Increase in ecommerce conversion rate</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="font-bold text-xl text-cyan-600">67%</p>
+              <p class="text-xs text-gray-500">Increase in email open rates</p>
+            </div>
+          </div>
+          
+          <div class="text-xs text-gray-500">Medical equipment retailer, 45 employees</div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 4 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+        <div class="p-8">
+          <div class="flex items-center mb-6">
+            <img 
+              src="/assets/images/testimonial-logos/client4.svg" 
+              alt="NeuroCare Tech" 
+              class="w-12 h-12 rounded-full mr-4 object-cover border border-gray-200"
+              loading="lazy"
+              onerror="this.src='https://via.placeholder.com/48/9CA3AF/FFFFFF?text=NT'; this.onerror='';"
+            />
+            <div>
+              <h3 class="font-bold text-gray-800">David Thompson</h3>
+              <p class="text-sm text-gray-600">CEO, NeuroCare Tech</p>
+            </div>
+          </div>
+          
+          <p class="text-gray-600 italic mb-6">
+            "The compliance automation Med Sprynt built saved us approximately $97,000 annually in regulatory costs and virtually eliminated our documentation errors. As a smaller company, this allowed us to compete with much larger players."
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6 mb-4">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="font-bold text-xl text-cyan-600">$97K</p>
+              <p class="text-xs text-gray-500">Annual savings in regulatory costs</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <p class="font-bold text-xl text-cyan-600">19 hrs</p>
+              <p class="text-xs text-gray-500">Weekly time savings for staff</p>
+            </div>
+          </div>
+          
+          <div class="text-xs text-gray-500">Neurological devices manufacturer, 23 employees</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-16 text-center">
+      <a href="/#contact" class="inline-flex items-center justify-center font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out bg-cyan-500 text-white hover:bg-cyan-600 focus:ring-cyan-500 px-8 py-4 text-base">
+        Get Results Like These for Your Business
+      </a>
+    </div>
+    <!-- Founder/Video Testimonial Section -->
+    <!-- Removed as requested -->
+    
+  </div>
+</section>
+
+<!-- Challenges Section -->
+<!-- Challenges Section -->
+<section id="challenges" class="py-24 bg-gray-100">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-4">Med Tech Ecommerce Challenges Med Sprynt Solves</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">For Med Tech founders drowning in these operational burdens, Med Sprynt provides AI-powered solutions that eliminate busywork and drive growth.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <!-- Challenge Card 1 -->
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+        <div class="p-8">
+          <div class="bg-cyan-100 text-cyan-700 h-12 w-12 flex items-center justify-center rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl mb-3">FDA & HIPAA Compliance Paperwork</h3>
+          <p class="text-gray-600 mb-4">Manual documentation drains an average of 15.7 hours per week and increases error rates by 34%.</p>
+          <div class="border-t border-gray-100 pt-6">
+            <p class="text-sm font-medium text-cyan-600">Impact Without Med Sprynt:</p>
+            <ul class="mt-3 space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>$47,000+ in annual regulatory costs</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>91% of companies face compliance-related delays</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Challenge Card 2 -->
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+        <div class="p-8">
+          <div class="bg-cyan-100 text-cyan-700 h-12 w-12 flex items-center justify-center rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Inventory & Supply Chain Complexity</h3>
+          <p class="text-gray-600 mb-4">Med Tech companies lose 23% of potential revenue due to stockouts and 18% of capital to overstock.</p>
+          <div class="border-t border-gray-100 pt-6">
+            <p class="text-sm font-medium text-cyan-600">Impact Without Med Sprynt:</p>
+            <ul class="mt-3 space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>Avg. 14.3 hours/week on manual inventory management</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>37% average stockout rate for high-margin products</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Challenge Card 3 -->
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+        <div class="p-8">
+          <div class="bg-cyan-100 text-cyan-700 h-12 w-12 flex items-center justify-center rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Customer Service Overwhelm</h3>
+          <p class="text-gray-600 mb-4">Med Tech support teams spend 68% of their time handling repetitive questions about usage, compatibility, and shipping.</p>
+          <div class="border-t border-gray-100 pt-6">
+            <p class="text-sm font-medium text-cyan-600">Impact Without Med Sprynt:</p>
+            <ul class="mt-3 space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>27.5-hour average response time during peak periods</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>42% of support costs wasted on automation-eligible tasks</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Challenge Card 4 -->
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+        <div class="p-8">
+          <div class="bg-cyan-100 text-cyan-700 h-12 w-12 flex items-center justify-center rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Untapped Marketing Opportunities</h3>
+          <p class="text-gray-600 mb-4">Med Tech brands lose 31-47% of potential lifetime value due to inadequate personalization and follow-up.</p>
+          <div class="border-t border-gray-100 pt-6">
+            <p class="text-sm font-medium text-cyan-600">Impact Without Med Sprynt:</p>
+            <ul class="mt-3 space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>13.5% average cart abandonment rate for high-value items</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>71% of cross-sell/upsell opportunities missed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Challenge Card 5 -->
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+        <div class="p-8">
+          <div class="bg-cyan-100 text-cyan-700 h-12 w-12 flex items-center justify-center rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Returns & Compliance Issues</h3>
+          <p class="text-gray-600 mb-4">Manual handling of returns costs Med Tech companies 2.4x more than necessary and creates compliance vulnerabilities.</p>
+          <div class="border-t border-gray-100 pt-6">
+            <p class="text-sm font-medium text-cyan-600">Impact Without Med Sprynt:</p>
+            <ul class="mt-3 space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>63% of returned products improperly processed</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>$38,500 average annual cost of return-related compliance issues</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Challenge Card 6 -->
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+        <div class="p-8">
+          <div class="bg-cyan-100 text-cyan-700 h-12 w-12 flex items-center justify-center rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-xl mb-3">Talent Drain & Hiring Issues</h3>
+          <p class="text-gray-600 mb-4">Med Tech companies spend 18.4 weeks on average hiring specialized ecommerce staff who then spend 62% of time on tasks that could be automated.</p>
+          <div class="border-t border-gray-100 pt-6">
+            <p class="text-sm font-medium text-cyan-600">Impact Without Med Sprynt:</p>
+            <ul class="mt-3 space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>$127,000+ annual per-employee cost (salary + benefits)</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-red-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>32% average turnover rate due to tedious manual tasks</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-16">
+      <a href="/#solutions" class="inline-flex items-center justify-center font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out bg-cyan-500 text-white hover:bg-cyan-600 focus:ring-cyan-500 px-10 py-4 text-lg">
+        See Med Sprynt's Custom Solutions
+      </a>
+    </div>
+  </div>
+</section> 
+
+<!-- Solutions Section -->
+<!-- Solutions Section -->
+<section id="solutions" class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-3">CUSTOM AI SOLUTIONS</span>
+      <h2 class="text-3xl font-bold mb-4">AI-Powered Automation Solutions for Med Tech Growth</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">We build custom AI solutions that eliminate manual tasks, cut costs, and boost revenue for your Med Tech ecommerce brand.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-5xl mx-auto">
+      <!-- Solution 1 -->
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-20 flex-shrink-0">
+          <div class="h-16 w-16 bg-cyan-100 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-3">Compliance Automation Suite</h3>
+          <p class="text-gray-600 mb-4">AI-driven compliance tracking and documentation that automatically handles FDA, HIPAA, and other regulatory requirements.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Reduces compliance workload by 72%</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Auto-updates to current regulatory requirements</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Cuts documentation errors by 96%</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Solution 2 -->
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-20 flex-shrink-0">
+          <div class="h-16 w-16 bg-cyan-100 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-3">Inventory Intelligence System</h3>
+          <p class="text-gray-600 mb-4">Smart inventory management that predicts demand, automates reordering, and ensures optimal stock levels at all times.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Reduces stockouts by 89% and overstock by 64%</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Automates lot tracking and expiration management</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Cuts inventory management time by 83%</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Solution 3 -->
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-20 flex-shrink-0">
+          <div class="h-16 w-16 bg-cyan-100 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-3">Med Tech AI Support Assistant</h3>
+          <p class="text-gray-600 mb-4">HIPAA-compliant AI support system that handles common inquiries, provides usage guidance, and properly escalates complex issues.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Automates 76% of customer support interactions</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Reduces response time from hours to seconds</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Cuts support costs by 41% while improving CSAT</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Solution 4 -->
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="md:w-20 flex-shrink-0">
+          <div class="h-16 w-16 bg-cyan-100 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-3">Growth Marketing Automation</h3>
+          <p class="text-gray-600 mb-4">AI-driven marketing system that creates compliant, compelling content and delivers personalized messaging at scale.</p>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Increases conversion rates by 53% on average</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Automates content creation and compliance checks</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="text-cyan-500 h-5 w-5 mr-1.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Boosts customer LTV by 38-47%</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-20 max-w-4xl mx-auto bg-gray-50 rounded-xl p-10 border border-gray-200 text-center">
+      <h3 class="text-2xl font-bold mb-4">Custom AI Integration For Your Specific Needs</h3>
+      <p class="text-gray-600 mb-6">Every Med Tech business is unique. We analyze your specific workflows and build custom AI automation solutions that integrate with your existing systems.</p>
+      <a href="/#contact" class="inline-flex items-center justify-center font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out bg-cyan-500 text-white hover:bg-cyan-600 focus:ring-cyan-500 px-8 py-4 text-base">
+        Get Your Custom AI Solution
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<!-- Process Section -->
+<section id="process" class="py-24 bg-gray-100">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-3">OUR METHODOLOGY</span>
+      <h2 class="text-3xl font-bold mb-4">The Med Sprynt Implementation Process</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">Our methodical approach ensures we build AI automations that deliver measurable ROI and integrate seamlessly with your existing workflows.</p>
+    </div>
+    
+    <div class="max-w-5xl mx-auto">
+      <!-- Step 1 -->
+      <div class="flex flex-col md:flex-row items-start mb-20">
+        <div class="md:w-1/5 mb-6 md:mb-0 md:pr-6 flex justify-center md:justify-start">
+          <div class="bg-cyan-600 text-white h-16 w-16 rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+        </div>
+        <div class="md:w-4/5 md:pl-6">
+          <h3 class="text-2xl font-bold mb-4">Deep Process Discovery</h3>
+          <p class="text-gray-600 mb-8">We begin with a comprehensive analysis of your current workflows, systems, and pain points. This involves mapping all processes, identifying inefficiencies, and quantifying the impact of each potential automation.</p>
+          
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <h4 class="font-bold text-gray-800 mb-4">What to Expect:</h4>
+            <ul class="mt-3 space-y-4">
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Process mapping sessions</span> where we document your current workflows in detail</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Pain point analysis</span> to identify the most time-consuming and error-prone tasks</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Systems inventory</span> to understand your tech stack and integration points</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Step 2 -->
+      <div class="flex flex-col md:flex-row items-start mb-20">
+        <div class="md:w-1/5 mb-6 md:mb-0 md:pr-6 flex justify-center md:justify-start">
+          <div class="bg-cyan-600 text-white h-16 w-16 rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+        </div>
+        <div class="md:w-4/5 md:pl-6">
+          <h3 class="text-2xl font-bold mb-4">Strategic Automation Planning</h3>
+          <p class="text-gray-600 mb-8">Based on our findings, we develop a prioritized automation roadmap that focuses on the highest-impact opportunities first. This ensures you see measurable ROI as quickly as possible.</p>
+          
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <h4 class="font-bold text-gray-800 mb-4">What to Expect:</h4>
+            <ul class="mt-3 space-y-4">
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Detailed ROI projections</span> for each proposed automation</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Phased implementation roadmap</span> with clear milestones and timelines</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Technology selection</span> based on your specific needs and existing systems</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Step 3 -->
+      <div class="flex flex-col md:flex-row items-start mb-20">
+        <div class="md:w-1/5 mb-6 md:mb-0 md:pr-6 flex justify-center md:justify-start">
+          <div class="bg-cyan-600 text-white h-16 w-16 rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+        </div>
+        <div class="md:w-4/5 md:pl-6">
+          <h3 class="text-2xl font-bold mb-4">Custom Solution Development</h3>
+          <p class="text-gray-600 mb-8">Our team builds custom AI automations tailored to your specific workflows and compliance requirements. Each solution is designed to integrate seamlessly with your existing systems.</p>
+          
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <h4 class="font-bold text-gray-800 mb-4">What to Expect:</h4>
+            <ul class="mt-3 space-y-4">
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Agile development process</span> with regular progress updates and feedback sessions</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Compliance-first design</span> ensuring all solutions meet FDA, HIPAA, and other regulatory requirements</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Thorough testing</span> including security, performance, and edge-case scenarios</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Step 4 -->
+      <div class="flex flex-col md:flex-row items-start">
+        <div class="md:w-1/5 mb-6 md:mb-0 md:pr-6 flex justify-center md:justify-start">
+          <div class="bg-cyan-600 text-white h-16 w-16 rounded-full flex items-center justify-center text-2xl font-bold">4</div>
+        </div>
+        <div class="md:w-4/5 md:pl-6">
+          <h3 class="text-2xl font-bold mb-4">Implementation & Continuous Optimization</h3>
+          <p class="text-gray-600 mb-8">We handle the entire implementation process, from deployment to team training. Once live, we continuously monitor and optimize your automations to ensure maximum ROI.</p>
+          
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <h4 class="font-bold text-gray-800 mb-4">What to Expect:</h4>
+            <ul class="mt-3 space-y-4">
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Seamless deployment</span> designed to minimize disruption to your operations</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Comprehensive training</span> for your team to ensure proper usage and maximum adoption</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Monthly performance reports</span> tracking time saved, cost reduction, and revenue impact</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="text-cyan-500 h-5 w-5 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><span class="font-medium">Ongoing optimization</span> based on real-world usage data and evolving business needs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-20">
+      <a href="/#contact" class="inline-flex items-center justify-center font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out bg-cyan-500 text-white hover:bg-cyan-600 focus:ring-cyan-500 px-10 py-4 text-lg">
+        Start Your Automation Journey Today
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Preview Section -->
+<!-- Blog Preview Section -->
+<section id="blog" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 text-sm font-semibold rounded-full mb-3">INSIGHTS</span>
+      <h2 class="text-3xl font-bold mb-4">Latest Med Tech AI Automation Insights</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">Stay up-to-date with the latest strategies, case studies, and insights on AI automation for Med Tech ecommerce.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <!-- Blog Post 1 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+        <a href="/blog/compliance-automation-fda-hipaa" class="block hover:opacity-90 transition-opacity">
+          <img 
+            src="/assets/images/blog/compliance-automation.jpg" 
+            alt="FDA and HIPAA Compliance Automation" 
+            class="w-full h-48 object-cover rounded-t-xl"
+            onerror="this.src='https://via.placeholder.com/600x300/E2E8F0/64748B?text=FDA+and+HIPAA+Compliance'; this.onerror='';"
+          />
+        </a>
+        <div class="p-8">
+          <div class="text-sm text-gray-500 mb-3">August 12, 2023</div>
+          <h3 class="font-bold text-xl mb-3">
+            <a href="/blog/compliance-automation-fda-hipaa" class="text-gray-800 hover:text-cyan-600">Automating FDA and HIPAA Compliance for Med Tech Ecommerce</a>
+          </h3>
+          <p class="text-gray-600 mb-4">How AI is revolutionizing regulatory compliance for medical device companies, reducing costs and errors while improving audit readiness.</p>
+          <a href="/blog/compliance-automation-fda-hipaa" class="text-cyan-600 hover:text-cyan-700 font-medium inline-flex items-center">
+            Read More
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Blog Post 2 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+        <a href="/blog/inventory-management-ai" class="block hover:opacity-90 transition-opacity">
+          <img 
+            src="/assets/images/blog/inventory-management.jpg" 
+            alt="AI-Powered Inventory Management" 
+            class="w-full h-48 object-cover rounded-t-xl"
+            onerror="this.src='https://via.placeholder.com/600x300/E2E8F0/64748B?text=AI+Inventory+Management'; this.onerror='';"
+          />
+        </a>
+        <div class="p-8">
+          <div class="text-sm text-gray-500 mb-3">July 28, 2023</div>
+          <h3 class="font-bold text-xl mb-3">
+            <a href="/blog/inventory-management-ai" class="text-gray-800 hover:text-cyan-600">How AI is Transforming Med Tech Inventory Management</a>
+          </h3>
+          <p class="text-gray-600 mb-4">Discover how artificial intelligence is helping Med Tech companies predict demand, optimize stock levels, and automate reordering.</p>
+          <a href="/blog/inventory-management-ai" class="text-cyan-600 hover:text-cyan-700 font-medium inline-flex items-center">
+            Read More
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Blog Post 3 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200">
+        <a href="/blog/customer-support-automation-hipaa" class="block hover:opacity-90 transition-opacity">
+          <img 
+            src="/assets/images/blog/customer-support.jpg" 
+            alt="HIPAA-Compliant AI Support" 
+            class="w-full h-48 object-cover rounded-t-xl"
+            onerror="this.src='https://via.placeholder.com/600x300/E2E8F0/64748B?text=HIPAA+Compliant+Support'; this.onerror='';"
+          />
+        </a>
+        <div class="p-8">
+          <div class="text-sm text-gray-500 mb-3">June 15, 2023</div>
+          <h3 class="font-bold text-xl mb-3">
+            <a href="/blog/customer-support-automation-hipaa" class="text-gray-800 hover:text-cyan-600">Building HIPAA-Compliant Customer Support Automation</a>
+          </h3>
+          <p class="text-gray-600 mb-4">How to implement AI-powered customer support that maintains strict HIPAA compliance while providing exceptional service experiences.</p>
+          <a href="/blog/customer-support-automation-hipaa" class="text-cyan-600 hover:text-cyan-700 font-medium inline-flex items-center">
+            Read More
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-16">
+      <a href="/blog" class="inline-flex items-center justify-center font-semibold rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-50 focus:ring-cyan-500 px-8 py-4 text-base">
+        View All Articles
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<!-- FAQ Section -->
+<section id="faq" class="py-24 bg-white border-t border-gray-100">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">Everything you need to know about Med Sprynt's AI automation for Med Tech ecommerce.</p>
+    </div>
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-8">
+        <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+          <h3 class="font-semibold text-lg text-cyan-700 mb-3">Is Med Sprynt's automation HIPAA and FDA compliant?</h3>
+          <p class="text-gray-700">Yes. Every solution is built with compliance as a top priority. We automate documentation, audit trails, and validation to ensure you meet or exceed all regulatory requirements. Our founder has hands-on experience with Med Tech compliance.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+          <h3 class="font-semibold text-lg text-cyan-700 mb-3">How fast can I see results?</h3>
+          <p class="text-gray-700">Most clients see measurable efficiency gains and cost savings within 30 days of implementation. Our process is designed for rapid deployment and quick wins.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+          <h3 class="font-semibold text-lg text-cyan-700 mb-3">What if my team isn't technical?</h3>
+          <p class="text-gray-700">No problem. We handle all the technical setup and provide simple, step-by-step training. Our automations are designed to be user-friendly and require minimal ongoing effort from your team.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+          <h3 class="font-semibold text-lg text-cyan-700 mb-3">How is Med Sprynt different from other automation agencies?</h3>
+          <p class="text-gray-700">We specialize 100% in Med Tech ecommerce. Our solutions are custom-built for your regulatory, inventory, and marketing needs. Plus, our risk-free guarantee means you only pay if you see results.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+          <h3 class="font-semibold text-lg text-cyan-700 mb-3">Is my data secure?</h3>
+          <p class="text-gray-700">Absolutely. We use industry-standard encryption and best practices for data security. Your information is never shared with third parties.</p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+          <h3 class="font-semibold text-lg text-cyan-700 mb-3">How do I get started?</h3>
+          <p class="text-gray-700">Just request your free AI Growth Plan or book a free strategy call. We'll analyze your business and show you exactly where automation can make the biggest impact.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Med Sprynt's automation HIPAA and FDA compliant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every solution is built with compliance as a top priority. We automate documentation, audit trails, and validation to ensure you meet or exceed all regulatory requirements. Our founder has hands-on experience with Med Tech compliance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast can I see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most clients see measurable efficiency gains and cost savings within 30 days of implementation. Our process is designed for rapid deployment and quick wins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my team isn't technical?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No problem. We handle all the technical setup and provide simple, step-by-step training. Our automations are designed to be user-friendly and require minimal ongoing effort from your team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Med Sprynt different from other automation agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We specialize 100% in Med Tech ecommerce. Our solutions are custom-built for your regulatory, inventory, and marketing needs. Plus, our risk-free guarantee means you only pay if you see results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We use industry-standard encryption and best practices for data security. Your information is never shared with third parties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Just request your free AI Growth Plan or book a free strategy call. We'll analyze your business and show you exactly where automation can make the biggest impact."
+      }
+    }
+  ]
+}
+</script> 
+
+<!-- About Section -->
+<!-- About Section -->
+<section id="about" class="bg-white py-24">
+  <div class="container mx-auto px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Meet Your Med Tech Automation Expert</h2>
+      <p class="text-lg text-gray-700 mb-8">Hi, I'm <span class="font-bold text-cyan-700">Grapo (Gracjan Poniatowski)</span>. I've helped Med Tech brands automate compliance, inventory, and marketing for over 7 years. My mission: help you scale faster, with less stress and more profit.</p>
+      <blockquote class="italic text-cyan-800 bg-cyan-50 border-l-4 border-cyan-400 px-8 py-6 rounded-xl mb-8">“If you're not automating, you're falling behind. My promise: measurable results, or you don't pay.”</blockquote>
+      <div class="flex justify-center items-center space-x-4 text-center">
+        <a href="#testimonials" class="text-cyan-600 hover:underline font-semibold">See real client results →</a>
+        <span>|</span>
+        <a href="#" onclick="window.scrollTo({top: document.querySelector('#testimonials').offsetTop, behavior: 'smooth'}); return false;" class="text-cyan-600 hover:underline font-semibold">Watch my story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<!-- Contact Section -->
+<section id="contact" class="bg-cyan-50 py-24">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-cyan-900 mb-4">Ready to Unlock AI Growth for Your Med Tech Brand?</h2>
+      <p class="text-lg text-cyan-800 max-w-2xl mx-auto">Let's discuss your specific challenges and build a custom AI automation plan to drive efficiency and sales.</p>
+    </div>
+    
+    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <!-- Contact Form Column -->
+      <div class="lg:col-span-2">
+        <form
+          name="medsprynt-contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="bg-white rounded-xl shadow-lg p-10"
+          x-data="{ submitted: false }"
+          x-show="!submitted"
+          @submit.prevent="
+            fetch('/', { 
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: new URLSearchParams(new FormData($event.target)).toString()
+            })
+            .then(() => { submitted = true; })
+            .catch(error => console.error('Error:', error))
+          "
+        >
+          <input type="hidden" name="form-name" value="medsprynt-contact" />
+          <p class="hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          
+          <h3 class="text-xl font-bold text-gray-800 mb-8">Request a Free Strategy Call</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-cyan-500 focus:border-cyan-500"
+                required
+              >
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Business Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-cyan-500 focus:border-cyan-500"
+                required
+              >
+            </div>
+          </div>
+          
+          <div class="mb-8">
+            <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-cyan-500 focus:border-cyan-500"
+              required
+            >
+          </div>
+          
+          <div class="mb-8">
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">What's your biggest Med Tech automation challenge?</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-cyan-500 focus:border-cyan-500"
+            ></textarea>
+          </div>
+          
+          <div class="text-center">
+            <button
+              type="submit"
+              class="inline-flex items-center justify-center font-semibold rounded-xl bg-cyan-600 text-white hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 px-10 py-4 text-lg transition-all"
+            >
+              Book a Free Strategy Call
+            </button>
+          </div>
+        </form>
+
+        <div 
+          x-data="{ submitted: false }"
+          x-show="submitted"
+          class="bg-white rounded-xl shadow-lg p-10 text-center"
+        >
+          <svg class="w-16 h-16 text-green-500 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <h3 class="text-2xl font-bold mb-4">Thank You!</h3>
+          <p class="text-gray-600 mb-8">We've received your request and will reach out within 24 hours to schedule your strategy call.</p>
+          <a href="#" class="text-cyan-600 underline hover:text-cyan-800">Return to Home</a>
+        </div>
+        
+        <div class="mt-6 text-sm text-cyan-800 opacity-80">
+          <p>Your information is secure and will never be shared with third parties. By submitting this form, you agree to our <a href="/privacy-policy" class="underline hover:text-cyan-900">Privacy Policy</a>.</p>
+        </div>
+
+        <div class="mt-12 text-center">
+          <h4 class="text-lg font-bold text-cyan-700 mb-4">Prefer to schedule instantly?</h4>
+          <p class="text-gray-600 mb-4">Book your free strategy call directly with our Calendly calendar below.</p>
+          <div class="w-full max-w-xl mx-auto">
+            <iframe src="https://calendly.com/grapo" width="100%" height="600" frameborder="0" class="rounded-xl shadow-md w-full" style="min-height:400px;" title="Book a Strategy Call"></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Alternative Contact Methods Column -->
+      <div class="bg-white rounded-xl shadow-lg p-10">
+        <h3 class="text-xl font-bold text-gray-800 mb-8">Alternative Ways to Connect</h3>
+        
+        <!-- Direct Email -->
+        <div class="mb-8">
+          <p class="text-sm font-medium text-gray-600 uppercase tracking-wide mb-2">Email Us Directly</p>
+          <a href="mailto:hello@medsprynt.com" class="flex items-center text-cyan-700 hover:text-cyan-800 group">
+            <svg class="w-5 h-5 mr-2 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span class="text-lg group-hover:underline">hello@medsprynt.com</span>
+          </a>
+        </div>
+        
+        <!-- Calendly Scheduling -->
+        <div class="mb-8">
+          <p class="text-sm font-medium text-gray-600 uppercase tracking-wide mb-2">Schedule Directly</p>
+          <a 
+            href="https://calendly.com/grapo" 
+            target="_blank" 
+            class="flex items-center text-cyan-700 hover:text-cyan-800 mb-2 group"
+          >
+            <svg class="w-5 h-5 mr-2 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span class="text-lg group-hover:underline">Book a 30-min Strategy Call</span>
+          </a>
+          <div class="mt-4">
+            <a 
+              href="https://calendly.com/grapo" 
+              target="_blank"
+              class="inline-block w-full py-4 px-4 bg-cyan-50 text-cyan-700 text-center rounded-xl border border-cyan-200 hover:bg-cyan-100 transition-colors"
+            >
+              View Available Times
+            </a>
+          </div>
+        </div>
+        
+        <!-- Social Media -->
+        <div>
+          <p class="text-sm font-medium text-gray-600 uppercase tracking-wide mb-4">Connect on Social</p>
+          <div class="flex space-x-6">
+            <a href="https://linkedin.com/company/medsprynt" target="_blank" class="text-cyan-600 hover:text-cyan-800">
+              <span class="sr-only">LinkedIn</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="https://twitter.com/medsprynt" target="_blank" class="text-cyan-600 hover:text-cyan-800">
+              <span class="sr-only">Twitter</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+  
+  <!-- Footer -->
+<footer class="bg-gray-800 text-gray-300 pt-16 pb-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <!-- Footer Column 1: Brand/About -->
+      <div class="md:col-span-1">
+        <a href="/" class="text-xl font-bold text-white bg-cyan-600 px-3 py-1 rounded inline-block mb-4">Med Sprynt</a>
+        <p class="text-gray-400 text-sm mb-4">AI Automation experts specializing in scaling Med Tech Ecommerce brands. Founded by Gracjan 'Grapo' Poniatowski.</p>
+        <div class="flex space-x-3">
+          <a href="#" class="text-gray-400 hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Footer Column 2: Solutions -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">AI Solutions</h4>
+        <ul class="space-y-2">
+          <li><a href="/#solutions" class="text-gray-400 hover:text-white text-sm">Custom Workflow Automation</a></li>
+          <li><a href="/#solutions" class="text-gray-400 hover:text-white text-sm">AI-Powered Support</a></li>
+          <li><a href="/#solutions" class="text-gray-400 hover:text-white text-sm">Ecommerce Growth AI</a></li>
+          <li><a href="/#compliance" class="text-gray-400 hover:text-white text-sm">Compliance Automation</a></li>
+          <li><a href="/#process" class="text-gray-400 hover:text-white text-sm">Our Process</a></li>
+        </ul>
+      </div>
+      
+      <!-- Footer Column 3: Resources -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="/blog" class="text-gray-400 hover:text-white text-sm">Insights Blog</a></li>
+          <li><a href="/blog/compliance-automation-fda-hipaa" class="text-gray-400 hover:text-white text-sm">FDA & HIPAA Compliance</a></li>
+          <li><a href="/blog/inventory-automation-medtech" class="text-gray-400 hover:text-white text-sm">Inventory Automation</a></li>
+          <li><a href="/#about" class="text-gray-400 hover:text-white text-sm">About Grapo</a></li>
+        </ul>
+      </div>
+      
+      <!-- Footer Column 4: Contact/Legal -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">Connect</h4>
+        <ul class="space-y-2">
+          <li><a href="/#contact" class="text-gray-400 hover:text-white text-sm">Contact Us</a></li>
+          <li><a href="/#contact" class="text-gray-400 hover:text-white text-sm">Book Strategy Call</a></li>
+          <li><a href="/privacy-policy" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a></li>
+          <li><a href="/terms" class="text-gray-400 hover:text-white text-sm">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-500 flex flex-col items-center gap-2">
+      <span>&copy; <span id="current-year">May 22, 2025</span> Gracjan Poniatowski. Med Sprynt. All rights reserved.</span>
+      <div class="flex gap-4 justify-center mt-2">
+        <img src="/assets/images/testimonial-logos/trustpilot.svg" alt="Trustpilot" class="h-6" loading="lazy" onerror="this.src='https://via.placeholder.com/80x24?text=Trustpilot'; this.onerror='';" />
+        <img src="/assets/images/testimonial-logos/capterra.svg" alt="Capterra" class="h-6" loading="lazy" onerror="this.src='https://via.placeholder.com/80x24?text=Capterra'; this.onerror='';" />
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script> 
+  
+  <!-- Simple Analytics -->
+  <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+</body>
+</html> 

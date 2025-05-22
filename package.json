@@ -1,0 +1,34 @@
+{
+  "name": "medsprynt-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all -p css:watch eleventy:serve",
+    "build": "npm-run-all css:build eleventy:build",
+    "dev": "npm-run-all -p css:watch eleventy:serve",
+    "eleventy:build": "eleventy",
+    "eleventy:serve": "eleventy --serve",
+    "css:build": "postcss src/css/main.css -o _site/css/main.css --verbose",
+    "css:watch": "postcss src/css/main.css -o _site/css/main.css --verbose --watch"
+  },
+  "keywords": [],
+  "author": "Gracjan Poniatowski",
+  "license": "ISC",
+  "description": "Med Sprynt - AI Automation for Med Tech Ecommerce Growth",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@sendgrid/mail": "^7.7.0",
+    "alpinejs": "^3.13.2",
+    "node-fetch": "^2.7.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "tailwindcss": "^3.3.3"
+  }
+}
