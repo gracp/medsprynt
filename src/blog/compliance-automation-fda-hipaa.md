@@ -5,7 +5,7 @@ description: How AI is revolutionizing regulatory compliance for medical device 
 date: 2023-08-12
 author: Gracjan Poniatowski
 author_bio: Founder of Med Sprynt, helping Med Tech companies leverage AI to scale operations, enhance compliance, and boost revenue.
-featured_image: /assets/images/blog/compliance-automation.jpg
+featured_image: /assets/images/blog-compliance.svg
 read_time: 7 min
 tags:
   - compliance

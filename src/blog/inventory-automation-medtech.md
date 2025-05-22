@@ -5,7 +5,7 @@ description: How AI-powered inventory automation can reduce stockouts by 93%, cu
 date: 2023-09-05
 author: Gracjan Poniatowski
 author_bio: Founder of Med Sprynt, helping Med Tech companies leverage AI to scale operations, enhance compliance, and boost revenue.
-featured_image: /assets/images/blog/inventory-automation.jpg
+featured_image: /assets/images/blog-inventory.svg
 read_time: 8 min
 tags:
   - inventory
