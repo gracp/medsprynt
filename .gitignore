@@ -1,0 +1,5 @@
+/_site
+/node_modules
+/logs
+.DS_Store
+favicon_io.zip 
